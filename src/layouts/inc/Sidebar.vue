@@ -38,6 +38,9 @@
                 <nav-item icon="fas fa-home" link="/">
                      Home
                 </nav-item>
+                <nav-item icon="fas fa-users" link="/user">
+                     Users
+                </nav-item>
                 <nav-item icon="fas fa-info-circle" link="/about">
                      About
                 </nav-item>
