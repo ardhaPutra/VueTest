@@ -21,12 +21,13 @@ function create_barang($post)
 {
     global $db;
 
-    $nama   = strip_tags($post['nama']);
-    $jumlah = strip_tags($post['jumlah']);
-    $harga  = strip_tags($post['harga']);
+    $nama       = strip_tags($post['nama']);
+    $jumlah     = strip_tags($post['jumlah']);
+    $harga      = strip_tags($post['harga']);
+    $barcode    = rand(100000, 999999);
     
     // query tambah data
-    $query = "INSERT INTO barang VALUES(null, '$nama', '$jumlah', '$harga', CURRENT_TIMESTAMP())";
+    $query = "INSERT INTO barang VALUES(null, '$nama', '$jumlah', '$harga', '$barcode', CURRENT_TIMESTAMP())";
 
     mysqli_query($db, $query);
 
@@ -42,12 +43,14 @@ function update_barang($post)
     $nama       = strip_tags($post['nama']);
     $jumlah     = strip_tags($post['jumlah']);
     $harga      = strip_tags($post['harga']);
+    $barcode    = rand(100000, 999999);
     
     // query ubah data
     $query = "UPDATE barang SET 
         nama    = '$nama', 
         jumlah  = '$jumlah',
-        harga   = '$harga'
+        harga   = '$harga',
+        barcode = '$barcode'
     WHERE id_barang = $id_barang    
     ";
 
