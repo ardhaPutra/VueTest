@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import ContentHeader from './components/ContentHeader.vue'
 import Content from './components/Content.vue'
+import './registerServiceWorker'
 
 const app = createApp(App)
 
